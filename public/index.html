@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Your File</h1>
+        <p>Choose a photo (JPG) or document (PDF) to upload</p>
+
+        <form id="uploadForm" enctype="multipart/form-data" method="POST">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required />
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required />
+            </div>
+
+            <!-- Radio buttons to choose between Color or Fiery -->
+            <div class="radio-group">
+                <label>Choose Printing Option</label>
+                <div>
+                    <input type="radio" id="colorOption" name="printOption" value="color" required />
+                    <label for="colorOption">Color</label>
+                </div>
+                <div>
+                    <input type="radio" id="fieryOption" name="printOption" value="fiery" />
+                    <label for="fieryOption">Fiery</label>
+                </div>
+            </div>
+
+            <!-- Color Category (Visible when Color option is selected) -->
+            <div id="colorCategorySection" class="input-group" style="display:none;">
+                <label for="colorCategory">Color Category</label>
+                <select id="colorCategory" name="colorCategory">
+                    <option value="">Select Color Option</option>
+                    <option value="C_A4_100gr_color">A4 100 gr color</option>
+                    <option value="C_A4_80gr_color">A4 80 gr color</option>
+                    <option value="C_A3_100gr_color">A3 100 gr color</option>
+                    <option value="C_A3_80gr_color">A3 80 gr color</option>
+                    <option value="">---- Black & White -----</option>
+                    <option value="C_A4_100gr_black_white">A4 gr 100 Black & White</option>
+                    <option value="C_A4_80gr_black_white">A4 80 gr Black & White</option> 
+                    <option value="C_A3_100gr_black_white">A3 100 gr Black & White</option> 
+                    <option value="C_A3_80gr_black_white">A3 80 gr Black & White</option> 
+                    
+                </select>
+            </div>
+
+            <!-- Fiery Category (Visible when Fiery option is selected) -->
+            <div id="fieryCategorySection" class="input-group" style="display:none;">
+                <label for="fieryCategory">Fiery Category</label>
+                <select id="fieryCategory" name="fieryCategory">
+                    <option value="">Select Fiery Option</option>
+                    <option value="F_A3_100gr">A3 100 gr</option>
+                    <option value="F_A3_160gr">A3 160 gr</option>
+                    <option value="F_A3_80gr_recycled">A3 recycled</option>
+                    <option value="F_A3_Plus_300gr">A3 Plus 300 gr</option>
+                    <!--<option value="F_A4_100gr">A4 100 gr</option>-->
+                    <option value="">---- Black & White -----</option>
+                    <option value="F_A3_100gr_Black_white">A3 100 gr Black & White</option>
+                    <option value="F_A3_160gr_Black_white">A3 160 gr Black & White</option>
+                    <option value="F_A3_recycled_Black_white">A3 recycled Black & White</option>
+                    <option value="F_A3_Plus_300gr_Black_white">A3 Plus 300 gr Black & White</option>
+                   <!--<option value="F_A4_100gr_Black_white">A4 100 gr Black & White</option>-->
+
+                </select>
+            </div>
+
+            <div class="file-input">
+                <input type="file" id="fileUpload" name="fileUpload" accept=".jpg, .jpeg, .pdf" />
+                <label for="fileUpload">Choose File</label>
+            </div>
+            <div id="fileName" class="file-info">No file selected</div>
+
+            <button type="button" class="upload-btn" id="sendToPrint" disabled>Upload</button> <!-- Use type="button" to prevent form submission -->
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
