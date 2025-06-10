@@ -175,14 +175,6 @@ PRINTER_DEFAULT=color
 
 ---
 
-## ✅ DevOps-Ready Enhancements
-
-* [ ] Add unit tests
-* [ ] Add frontend Dockerfile
-* [ ] Add health checks and retry logic
-* [ ] Add proper logging and rotation
-
----
 
 ## 👤 Oren Ohayon
 
